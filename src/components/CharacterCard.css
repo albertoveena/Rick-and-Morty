@@ -1,0 +1,78 @@
+/* Character Card Styles */
+.character-card {
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.character-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(30, 144, 255, 0.2) !important;
+  border-color: #1e90ff;
+}
+
+.character-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1e90ff, #ffd700);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
+
+.character-card:hover::before {
+  transform: scaleX(1);
+}
+
+.character-image {
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.character-card:hover .character-image {
+  transform: scale(1.05);
+}
+
+.character-name {
+  color: #0a0e27;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.character-card:hover .character-name {
+  color: #1e90ff;
+}
+
+.favorite-btn {
+  transition: all 0.2s ease;
+  font-size: 1.2rem;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.2);
+  background-color: #ffe4e1 !important;
+}
+
+.favorite-btn.favorite {
+  background-color: #ffcdd2 !important;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .character-image {
+    height: 200px;
+  }
+
+  .character-name {
+    font-size: 0.95rem;
+  }
+}

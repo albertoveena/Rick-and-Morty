@@ -1,16 +1,50 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Rick and Morty - Frontend (versión simple)
 
-Currently, two official plugins are available:
+Cómo ejecutar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Requisitos:
+- Node.js (v16 o superior) y npm
 
-## React Compiler
+Pasos:
+```powershell
+cd c:\Users\josea\rick-morty-frontend
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Abrir en el navegador la dirección que muestre Vite (normalmente `http://localhost:5173`).
 
-## Expanding the ESLint configuration
+Para compilar y ver la versión de producción:
+```powershell
+npm run build
+npm run preview
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Qué hace la aplicación
+
+- Muestra personajes del universo Rick and Morty usando la API pública.
+- Permite buscar, filtrar, ver detalles y marcar favoritos.
+
+Arquitectura en pocas palabras
+
+- La app está hecha con React.
+- `src/services/api.js` hace las llamadas a la API.
+- Componentes principales: `Home`, `CharacterList`, `CharacterCard`, `CharacterDetail`, `SearchBar`.
+- El estado se guarda con hooks; los favoritos se guardan en `localStorage`.
+
+Decisiones técnicas (explicado simple)
+
+- React: para dividir la interfaz en componentes.
+- Vite: para un arranque rápido en desarrollo.
+- Bootstrap: para estilos rápidos sin mucho CSS.
+- No hay backend propio: la app usa la API pública.
+
+Qué mejoraría con más tiempo (en lenguaje sencillo)
+
+- Guardar favoritos en un servidor para poder verlos desde otros dispositivos.
+- Añadir login para que cada usuario tenga sus favoritos.
+- Escribir tests básicos para asegurar que las partes importantes funcionan.
+- Mejorar los filtros de búsqueda por especie, estado o género.
+
+
