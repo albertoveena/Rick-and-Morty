@@ -8,7 +8,7 @@ Requisitos:
 
 Pasos:
 ```powershell
-cd c:\Users\josea\rick-morty-frontend
+cd /ruta/del/proyecto 
 npm install
 npm run dev
 ```
